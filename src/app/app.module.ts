@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {CoinService} from './service/coin.service';
 import {MarketService} from './service/market.service';
+import { SearchComponent } from './component/user/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MarketService} from './service/market.service';
     MarketAddComponent,
     MarketGetComponent,
     CoinAddComponent,
-    CoinGetComponent
+    CoinGetComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

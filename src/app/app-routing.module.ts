@@ -5,6 +5,7 @@ import {MarketAddComponent} from './component/admin/market-add/market-add.compon
 import {MarketGetComponent} from './component/admin/market-get/market-get.component';
 import {CoinAddComponent} from './component/admin/coin-add/coin-add.component';
 import {CoinGetComponent} from './component/admin/coin-get/coin-get.component';
+import {SearchComponent} from './component/user/search/search.component';
 
 const routes: Routes = [
   // admin
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: '',
     component: MarketGetComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 

@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-4 ">
+    <div class="form-group">
+      <label>Search</label>
+      <input type="text" name="keyword" class="form-control" placeholder="Search..." #keyword>
+    </div>
+  </div>
+  <div class="col-md-2 ">
+    <div class="form-group justify-content-center">
+      <label>&nbsp;</label>
+      <button (click)="search(keyword)" class="btn  btn-info" style="margin-top: 33px;" type="button">Submit</button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <select name="market" class="form-control" style="margin-top: 33px;" #selectedCategory (change)="changeOption(selectedCategory.value)" >
+      <option *ngFor="let market of markets" [ngValue]="market" value="{{market.id}}" >
+        {{market.name}}
+      </option>
+    </select>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Last price</td>
+    <td>Base asset</td>
+    <td>Quote asset</td>
+    <td colspan="2">Action</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let coin of coins">
+    <td>{{ coin.id }}</td>
+    <td>{{ coin.name }}</td>
+    <td>{{ coin.lastPrice }}</td>
+    <td>{{ coin.baseAsset }}</td>
+    <td>{{ coin.quoteAsset }}</td>
+    <td><a [routerLink]="['/admin/coin/create']" class="btn btn-primary">Create</a></td>
+    <td><a [routerLink]="" class="btn btn-danger">Delete</a></td>
+  </tr>
+  </tbody>
+</table>

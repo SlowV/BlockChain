@@ -14,12 +14,19 @@ export class CoinService {
 
   createCoin(coin: Coin): Observable<any> {
     const headers = new HttpHeaders({
-      'Content-Type':  'application/json',
+      'Content-Type': 'application/json',
     });
     return this.http.post(this.baseUrl, coin, {headers});
   }
 
   getList(): Observable<any> {
     return this.http.get(this.baseUrl);
+  }
+
+  getListByMarketId(id): Observable<any> {
+    return this.http.get(this.baseUrl + `?marketId=${id}`);
+  }
+  getListByKeyword(keyword): Observable<any> {
+    return this.http.get(this.baseUrl + `?keyword=${keyword}`);
   }
 }
