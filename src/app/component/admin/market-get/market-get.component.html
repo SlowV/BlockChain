@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Status</td>
+    <td colspan="2">Action</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let market of markets">
+    <td>{{ market.id }}</td>
+    <td>{{ market.name }}</td>
+    <td>{{ market.description }}</td>
+    <td>{{ market.status }}</td>
+    <td><a [routerLink]="['/admin/market/create']" class="btn btn-primary">Create</a></td>
+    <td><a [routerLink]="" class="btn btn-danger">Delete</a></td>
+  </tr>
+  </tbody>
+</table>

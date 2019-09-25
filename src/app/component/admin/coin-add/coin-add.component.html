@@ -1,0 +1,39 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <form (ngSubmit)="createCoin()" >
+      <h2 class="text-primary">Create Market</h2>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="coin.name" name="name"/>
+      </div>
+      <div class="form-group">
+        <label>Last price</label>
+        <input type="text" class="form-control" [(ngModel)]="coin.lastPrice" name="lastPrice"/>
+      </div>
+      <div class="form-group">
+        <label>Base Asset</label>
+        <input type="text" class="form-control" [(ngModel)]="coin.baseAsset" name="baseAsset"/>
+      </div>
+      <div class="form-group">
+        <label>Quote Asset</label>
+        <input type="text" class="form-control" [(ngModel)]="coin.quoteAsset" name="quoteAsset"/>
+      </div>
+      <div class="form-group">
+        <label>Market</label>
+        <select name="market" [(ngModel)]="coin.marketIdString" class="form-control">
+          <option *ngFor="let market of markets" [ngValue]="market" value="{{market.id}}">{{market.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Volumn 24h</label>
+        <input type="text" class="form-control" [(ngModel)]="coin.volumn24h" name="volumn24h"/>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          Create Market
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
